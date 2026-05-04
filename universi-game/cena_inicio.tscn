@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b8ed5orpn13ys"]
+
+[ext_resource type="Script" uid="uid://rf3i1s6d4jtt" path="res://script_inicio.gd" id="1_hnhcb"]
+[ext_resource type="Texture2D" uid="uid://bjqc8rximpx3c" path="res://Imagens/inicio.png" id="2_cd34d"]
+
+[node name="inicio" type="Node2D" unique_id=2076219421]
+script = ExtResource("1_hnhcb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=944369272]
+position = Vector2(573.5, 317)
+scale = Vector2(0.79074585, 0.6261511)
+texture = ExtResource("2_cd34d")
+
+[node name="Button" type="Button" parent="." unique_id=230359930]
+offset_left = 404.0
+offset_top = 567.0
+offset_right = 724.0
+offset_bottom = 626.0
+
+[connection signal="pressed" from="Button" to="." method="iniciar"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c7khpp1spdniy"]
+
+[ext_resource type="Script" uid="uid://dfhdsqnqx4fq1" path="res://script_game_over.gd" id="1_p4wjp"]
+[ext_resource type="Texture2D" uid="uid://dv0wf082dga8f" path="res://Imagens/game_over.png" id="2_niwnu"]
+
+[node name="game_over" type="Node2D" unique_id=1439814963]
+script = ExtResource("1_p4wjp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=930042080]
+position = Vector2(581.1666, 331.00003)
+scale = Vector2(0.79534984, 0.60405153)
+texture = ExtResource("2_niwnu")
+
+[node name="Button" type="Button" parent="." unique_id=723887499]
+offset_left = 398.0
+offset_top = 568.0
+offset_right = 738.0
+offset_bottom = 616.0
+
+[connection signal="pressed" from="Button" to="." method="restart"]

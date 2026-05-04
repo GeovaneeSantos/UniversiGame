@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ditgs367j4ajs"]
+
+[ext_resource type="Script" uid="uid://jwjyus15qxre" path="res://script_hud.gd" id="1_8sq4i"]
+[ext_resource type="Texture2D" uid="uid://cwj747hr6otnb" path="res://Imagens/head-removebg-preview.png" id="2_640wx"]
+[ext_resource type="Texture2D" uid="uid://dgxoqgsghmpl7" path="res://Imagens/vida.png" id="3_a2258"]
+
+[node name="HUD" type="Node2D" unique_id=1138574463]
+position = Vector2(-2, 0)
+script = ExtResource("1_8sq4i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=632356306]
+position = Vector2(56.439392, 47)
+scale = Vector2(0.21212119, 0.2121212)
+texture = ExtResource("2_640wx")
+
+[node name="Vida" type="Sprite2D" parent="." unique_id=1779060274]
+position = Vector2(119.125, 50)
+scale = Vector2(0.14862204, 0.14862204)
+texture = ExtResource("3_a2258")
+
+[node name="Vida2" type="Sprite2D" parent="." unique_id=20010106]
+position = Vector2(165.00002, 50)
+scale = Vector2(0.14862204, 0.14862204)
+texture = ExtResource("3_a2258")
+
+[node name="Vida3" type="Sprite2D" parent="." unique_id=1466239309]
+position = Vector2(209.99998, 50.000008)
+scale = Vector2(0.14862204, 0.14862204)
+texture = ExtResource("3_a2258")

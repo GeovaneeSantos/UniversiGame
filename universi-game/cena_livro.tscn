@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://0tsale1uemcl"]
+
+[ext_resource type="Script" uid="uid://cc4q4lmhhil1u" path="res://script_livro.gd" id="1_kvt05"]
+[ext_resource type="Texture2D" uid="uid://b1frgqnfvbves" path="res://Imagens/personagem/book-removebg-preview.png" id="1_vb8as"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvt05"]
+size = Vector2(31, 24)
+
+[node name="livro" type="Node2D" unique_id=593265513]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1452486583]
+script = ExtResource("1_kvt05")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=284545335]
+scale = Vector2(0.12663752, 0.12663755)
+texture = ExtResource("1_vb8as")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1649407212]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_kvt05")

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://b28t31r2irm7l"]
+
+[ext_resource type="Script" uid="uid://bll72k40qi6yg" path="res://script_fase_1.gd" id="1_2y5kg"]
+[ext_resource type="Texture2D" uid="uid://kch4ulam2oel" path="res://Imagens/CenaSemHUD.png" id="1_buaih"]
+[ext_resource type="PackedScene" uid="uid://dhg7nn3jx2sw0" path="res://personagem.tscn" id="2_di1oa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buaih"]
+size = Vector2(436, 17.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_di1oa"]
+size = Vector2(679.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y5kg"]
+size = Vector2(607, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdmog"]
+size = Vector2(28, 218.5)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2y5kg"]
+a = Vector2(-32, 5)
+b = Vector2(53, 5)
+
+[node name="Fase_1" type="Node2D" unique_id=1215870152]
+script = ExtResource("1_2y5kg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1364901806]
+position = Vector2(577, 186)
+scale = Vector2(1, 0.9978448)
+texture = ExtResource("1_buaih")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1395680983]
+position = Vector2(35, -6)
+
+[node name="chao1" type="CollisionShape2D" parent="StaticBody2D" unique_id=1128781832]
+position = Vector2(190, 548)
+shape = SubResource("RectangleShape2D_buaih")
+
+[node name="chao2" type="CollisionShape2D" parent="StaticBody2D" unique_id=537565583]
+position = Vector2(774.25, 513)
+shape = SubResource("RectangleShape2D_di1oa")
+
+[node name="chao3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1552213896]
+position = Vector2(274.5, 439.5)
+shape = SubResource("RectangleShape2D_2y5kg")
+
+[node name="Personagem" parent="." unique_id=705009762 instance=ExtResource("2_di1oa")]
+position = Vector2(43, 98)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1259712549]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=934986626]
+position = Vector2(690, 374.25)
+shape = SubResource("RectangleShape2D_gdmog")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=640116441]
+position = Vector2(678, 251)
+shape = SubResource("SegmentShape2D_2y5kg")
+debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="escada"]
+[connection signal="body_exited" from="Area2D" to="." method="sai_escada"]
