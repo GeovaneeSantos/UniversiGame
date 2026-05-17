@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6ve180nokkpn" path="res://Imagens/biblioteca.png" id="2_cigd3"]
 [ext_resource type="PackedScene" uid="uid://dhg7nn3jx2sw0" path="res://personagem.tscn" id="3_cigd3"]
 [ext_resource type="PackedScene" uid="uid://ditgs367j4ajs" path="res://hud.tscn" id="4_dxfa3"]
+[ext_resource type="PackedScene" uid="uid://mlb8pya8xhi3" path="res://area_dano.tscn" id="5_7c4ob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8f1wn"]
 size = Vector2(1592.2063, 26.567474)
@@ -137,12 +138,6 @@ size = Vector2(150.56232, 11.789791)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg8up"]
 size = Vector2(181.47421, 11.789791)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_avy7t"]
-size = Vector2(82, 25.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r061y"]
-size = Vector2(67, 26.75)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f54sl"]
 size = Vector2(32, 16)
 
@@ -151,6 +146,12 @@ size = Vector2(32, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxfa3"]
 size = Vector2(120, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrxf1"]
+size = Vector2(24.722816, 6.461624)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7c4ob"]
+size = Vector2(67, 22)
 
 [node name="Node2D" type="Node2D" unique_id=192757950]
 script = ExtResource("1_0nwvv")
@@ -426,14 +427,6 @@ one_way_collision = true
 
 [node name="Area_Dano" type="Area2D" parent="." unique_id=942156964]
 
-[node name="Espinho1" type="CollisionShape2D" parent="Area_Dano" unique_id=1439746204]
-position = Vector2(455, 198)
-shape = SubResource("RectangleShape2D_avy7t")
-
-[node name="Espinho2" type="CollisionShape2D" parent="Area_Dano" unique_id=1598792135]
-position = Vector2(619.5, 198.375)
-shape = SubResource("RectangleShape2D_r061y")
-
 [node name="Espinho3" type="CollisionShape2D" parent="Area_Dano" unique_id=1426939757]
 position = Vector2(828, 228)
 shape = SubResource("RectangleShape2D_f54sl")
@@ -455,5 +448,17 @@ position = Vector2(376, 457)
 layer = 1
 
 [node name="HUD" parent="ParallaxBackground" unique_id=1138574463 instance=ExtResource("4_dxfa3")]
+
+[node name="AreaDano" parent="." unique_id=1095317021 instance=ExtResource("5_7c4ob")]
+position = Vector2(453, 193)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDano" unique_id=123408536]
+position = Vector2(1.5, 4.5)
+scale = Vector2(3.276327, 3.249957)
+shape = SubResource("RectangleShape2D_lrxf1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaDano" unique_id=1753257027]
+position = Vector2(166.5, 3)
+shape = SubResource("RectangleShape2D_7c4ob")
 
 [connection signal="body_entered" from="Area2D" to="." method="sair_fase"]

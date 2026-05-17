@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var colidindo_com_inimigo = false
-var valor_dano    = 0
+var valor_dano = 1
 
 var velocidade = 500
 var forca_pulo = 900
@@ -14,6 +14,9 @@ func _process(delta: float) -> void:
 	velocity.x = 0
 	velocity.y += gravidade
 	
+	if(colidindo_com_inimigo):
+		print("teste")
+		
 	if (ScriptGlobal.vidas<=0 and vivo):
 		ScriptGlobal.vidas = 0
 		$AnimationPlayer.play("death")
@@ -22,17 +25,18 @@ func _process(delta: float) -> void:
 	if (vivo):
 		if (Input.is_action_pressed("ui_left")):
 			velocity.x = -velocidade
-			$Sprite2D.flip_h = false
+			$Sprite2D.flip_h = true
 			$Marker2D.position.x = -1 * abs($Marker2D.position.x) # abs converter negativo para positivo
 			$Area2D.position.x = -1 * abs($Area2D.position.x) # abs converter negativo para positivo
 			
 		if (Input.is_action_pressed("ui_right")):
 			velocity.x = velocidade
-			$Sprite2D.flip_h = true
+			$Sprite2D.flip_h = false
 			$Marker2D.position.x = abs($Marker2D.position.x) # abs converter negativo para positivo
 			$Area2D.position.x = abs($Area2D.position.x) # abs converter negativo para positivo
 			
 		if (Input.is_action_just_pressed("ui_up") and is_on_floor()):
+			get_tree().root.print_tree()
 			velocity.y = -forca_pulo
 			animando = false
 			
@@ -51,7 +55,6 @@ func _process(delta: float) -> void:
 		if (not animando):
 			if (is_on_floor()):
 				if (velocity.x == 0):
-					$Sprite2D.flip_h = false
 					$AnimationPlayer.play("idle")
 				else:
 					$AnimationPlayer.play("walk")
@@ -65,9 +68,11 @@ func spawnar_livro():
 	var objeto_livro = cena_livro.instantiate()
 	
 	if (not $Sprite2D.flip_h): # não foi flipada, então é a imagem padrão, ou seja, direita
-		objeto_livro.get_node("Area2D").direcao = 1
-	else:
 		objeto_livro.get_node("Area2D").direcao = -1
+	else:
+		objeto_livro.get_node("Area2D").direcao = 1
+	
+	print(objeto_livro.get_node("Area2D").direcao)
 	
 	add_sibling(objeto_livro)
 	objeto_livro.global_position = $Marker2D.global_position
@@ -80,13 +85,17 @@ func ir_para_gamer_over():
 	get_tree().change_scene_to_file("res://cena_game_over.tscn")
 				
 func sofrer_dano():
-	if (colidindo_com_inimigo):
-		ScriptGlobal.qtd_vidas -= valor_dano
-		$AnimationPlayerDano.play("dano")
+	#if (colidindo_com_inimigo):
+		print("dano")
+		ScriptGlobal.vidas -= valor_dano
+		#$AnimationPlayerDano.play("dano")
 
 func ganhar_vida():
 	$AudioStreamPlayer_ganha_vida.play()
 	ScriptGlobal.qtd_vidas += 1
+	
+
+	
 	
 	
 	

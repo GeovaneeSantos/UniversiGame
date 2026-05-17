@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://mlb8pya8xhi3"]
+
+[ext_resource type="Script" uid="uid://cq5td3l18i0by" path="res://scrpt_area_dano.gd" id="1_ryfd5"]
+
+[node name="AreaDano" type="Node2D" unique_id=1095317021]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=525479656]
+script = ExtResource("1_ryfd5")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="causar_dano"]
