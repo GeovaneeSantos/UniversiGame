@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bpdm7m0jr283r"]
+
+[ext_resource type="Script" uid="uid://0270ab8unxuw" path="res://script_magia.gd" id="1_e1cq7"]
+[ext_resource type="Texture2D" uid="uid://dsrf0b732inj8" path="res://Imagens/personagem/magic_1-removebg-preview.png" id="1_yejim"]
+[ext_resource type="Texture2D" uid="uid://bvpfv51ypc4d3" path="res://Imagens/personagem/magic_2-removebg-preview.png" id="2_6ly3r"]
+[ext_resource type="Texture2D" uid="uid://c0ca0koxkmbnf" path="res://Imagens/personagem/magic_3-removebg-preview.png" id="3_e1cq7"]
+[ext_resource type="Texture2D" uid="uid://di56fo5s37iut" path="res://Imagens/personagem/magic_4-removebg-preview.png" id="4_ihmyw"]
+[ext_resource type="Texture2D" uid="uid://duuikua4ixyb" path="res://Imagens/personagem/magic_5-removebg-preview.png" id="5_j75vu"]
+[ext_resource type="Texture2D" uid="uid://bxu6imcsjw0rt" path="res://Imagens/personagem/magic_6-removebg-preview.png" id="6_atic6"]
+[ext_resource type="Texture2D" uid="uid://d0lujr801se71" path="res://Imagens/personagem/magic_7-removebg-preview.png" id="7_woygd"]
+[ext_resource type="Texture2D" uid="uid://ctu2elypcddq4" path="res://Imagens/personagem/magic_8-removebg-preview.png" id="8_xcb7m"]
+
+[sub_resource type="Animation" id="Animation_bbgnl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_yejim")]
+}
+
+[sub_resource type="Animation" id="Animation_pff7h"]
+resource_name = "magic"
+length = 2.0
+loop_mode = 1
+step = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_yejim"), ExtResource("2_6ly3r"), ExtResource("3_e1cq7"), ExtResource("4_ihmyw"), ExtResource("5_j75vu"), ExtResource("6_atic6"), ExtResource("7_woygd"), ExtResource("8_xcb7m"), ExtResource("8_xcb7m")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mhvpv"]
+_data = {
+&"RESET": SubResource("Animation_bbgnl"),
+&"magic": SubResource("Animation_pff7h")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw188"]
+size = Vector2(40, 24)
+
+[node name="Magia" type="Node2D" unique_id=1230887760]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=792900748]
+script = ExtResource("1_e1cq7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=482155663]
+scale = Vector2(0.15342464, 0.15342465)
+texture = ExtResource("1_yejim")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" unique_id=383496600]
+libraries/ = SubResource("AnimationLibrary_mhvpv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1610144608]
+shape = SubResource("RectangleShape2D_qw188")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="eliminar_inimigo"]

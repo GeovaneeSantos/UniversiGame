@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://b3tojgdgpmhxh"]
+
+[ext_resource type="Script" uid="uid://binvhyrqnf3ay" path="res://script_inimigo.gd" id="1_030df"]
+[ext_resource type="Texture2D" uid="uid://3s48ybf5aq0n" path="res://Imagens/personagem/cell_attack_1-removebg-preview.png" id="2_l0fh3"]
+[ext_resource type="Texture2D" uid="uid://cu6oufdqcoxux" path="res://Imagens/personagem/cell_attack_2-removebg-preview.png" id="3_o83ti"]
+[ext_resource type="Texture2D" uid="uid://7b0mrfpgdybj" path="res://Imagens/personagem/cell_attack_3-removebg-preview.png" id="4_5cs1f"]
+[ext_resource type="Texture2D" uid="uid://dft8qsqjy6o5y" path="res://Imagens/personagem/cell_attack_4-removebg-preview.png" id="5_ekwcj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enrbn"]
+size = Vector2(96, 76)
+
+[sub_resource type="Animation" id="Animation_eewpo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_l0fh3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:comportamento")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_3af6e"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_l0fh3"), ExtResource("3_o83ti"), ExtResource("2_l0fh3"), ExtResource("3_o83ti"), ExtResource("2_l0fh3"), ExtResource("3_o83ti")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:comportamento")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_nglqo"]
+resource_name = "spell"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_l0fh3"), ExtResource("3_o83ti"), ExtResource("4_5cs1f"), ExtResource("5_ekwcj")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spell"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:comportamento")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f2mw5"]
+_data = {
+&"RESET": SubResource("Animation_eewpo"),
+&"idle": SubResource("Animation_3af6e"),
+&"spell": SubResource("Animation_nglqo")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0fh3"]
+size = Vector2(88, 70)
+
+[node name="Inimigo" type="Node2D" unique_id=2087576167]
+
+[node name="Inimigo" type="CharacterBody2D" parent="." unique_id=1935804188]
+script = ExtResource("1_030df")
+comportamento = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Inimigo" unique_id=683321299]
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("2_l0fh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo" unique_id=1324156660]
+shape = SubResource("RectangleShape2D_enrbn")
+one_way_collision_margin = 15.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Inimigo" unique_id=1750978858]
+libraries/ = SubResource("AnimationLibrary_f2mw5")
+
+[node name="Marker2D" type="Marker2D" parent="Inimigo" unique_id=1060693762]
+position = Vector2(35, -7)
+
+[node name="Area2D" type="Area2D" parent="Inimigo" unique_id=1264005623]
+visibility_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo/Area2D" unique_id=2011246187]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_l0fh3")
+disabled = true
+debug_color = Color(0.6505108, 0.49391675, 0.45186257, 0.41960785)

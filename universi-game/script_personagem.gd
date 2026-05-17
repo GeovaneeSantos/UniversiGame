@@ -3,7 +3,7 @@ extends CharacterBody2D
 var colidindo_com_inimigo = false
 var valor_dano = 1
 
-var velocidade = 500
+var velocidade = 300
 var forca_pulo = 900
 var gravidade  = 40
 var vivo = true
@@ -80,6 +80,7 @@ func spawnar_livro():
 func eliminar_inimigo(body: Node2D) -> void:
 	if (body.name=="Inimigo"):
 		body.queue_free()
+		ScriptGlobal.inimigos_fase1 -= 1
 		
 func ir_para_gamer_over():
 	get_tree().change_scene_to_file("res://cena_game_over.tscn")
