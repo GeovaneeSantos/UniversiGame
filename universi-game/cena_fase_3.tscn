@@ -13,7 +13,7 @@ radius = 10.761627
 height = 173.05206
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0s5r2"]
-size = Vector2(819, 15)
+size = Vector2(779, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7j8ne"]
 size = Vector2(92, 78)
@@ -100,7 +100,7 @@ shape = SubResource("CapsuleShape2D_n7ypv")
 position = Vector2(540, 464)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1180349245]
-position = Vector2(1.5, -0.5)
+position = Vector2(21.5, -0.5)
 shape = SubResource("RectangleShape2D_0s5r2")
 one_way_collision = true
 
@@ -191,10 +191,6 @@ one_way_collision = true
 position = Vector2(186, 69.5)
 shape = SubResource("RectangleShape2D_cuxq2")
 one_way_collision = true
-
-[node name="Personagem_teste" parent="." unique_id=891053453]
-position = Vector2(31, 334)
-scale = Vector2(0.5, 0.5)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=258481419]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6ve180nokkpn"
-path="res://.godot/imported/Biblioteca.png-d7f1b2d8a685bca7ae74b0a2e2e83e02.ctex"
+uid="uid://2sgjwru86m0a"
+path="res://.godot/imported/mecanica.png-8b839e41129a9970d3cf8ecd3bc29f69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/Biblioteca.png"
-dest_files=["res://.godot/imported/Biblioteca.png-d7f1b2d8a685bca7ae74b0a2e2e83e02.ctex"]
+source_file="res://Imagens/mecanica.png"
+dest_files=["res://.godot/imported/mecanica.png-8b839e41129a9970d3cf8ecd3bc29f69.ctex"]
 
 [params]
 

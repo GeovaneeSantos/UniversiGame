@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6ve180nokkpn"
-path="res://.godot/imported/Biblioteca.png-d7f1b2d8a685bca7ae74b0a2e2e83e02.ctex"
+uid="uid://4ut1gdx01oy7"
+path="res://.godot/imported/Cantina.png-adc0f4b09e0a117ba582bc6cc849ce7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/Biblioteca.png"
-dest_files=["res://.godot/imported/Biblioteca.png-d7f1b2d8a685bca7ae74b0a2e2e83e02.ctex"]
+source_file="res://Imagens/Cantina.png"
+dest_files=["res://.godot/imported/Cantina.png-adc0f4b09e0a117ba582bc6cc849ce7a.ctex"]
 
 [params]
 

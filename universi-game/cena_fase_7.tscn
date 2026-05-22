@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://b51uvcgim2j5"]
+
+[ext_resource type="Texture2D" uid="uid://2sgjwru86m0a" path="res://Imagens/mecanica.png" id="1_mxipl"]
+[ext_resource type="PackedScene" uid="uid://dhg7nn3jx2sw0" path="res://personagem.tscn" id="2_mcrxt"]
+[ext_resource type="PackedScene" uid="uid://ditgs367j4ajs" path="res://hud.tscn" id="3_lr6c0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(3271.5708, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor_mid"]
+size = Vector2(2810.7097, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor_top"]
+size = Vector2(2351.1133, 28.936584)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_174a7"]
+size = Vector2(285.9674, 28.936584)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(37.872803, 1734.5105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_step"]
+size = Vector2(316.39084, 61.5968)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqu1i"]
+size = Vector2(316.39084, 87.39624)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5al1"]
+size = Vector2(458.94873, 148.9419)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spikes"]
+size = Vector2(238.72461, 178.72998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx225"]
+size = Vector2(238.72461, 178.72998)
+
+[node name="Node2D" type="Node2D" unique_id=1694145446]
+scale = Vector2(0.695, 0.695)
+
+[node name="BackgroundMecanica2" type="Sprite2D" parent="." unique_id=41692230]
+position = Vector2(827.4282, 467.08765)
+scale = Vector2(0.6011978, 0.60396826)
+texture = ExtResource("1_mxipl")
+metadata/_edit_lock_ = true
+
+[node name="Cenario_Solido" type="StaticBody2D" parent="." unique_id=1800942]
+scale = Vector2(0.695, 0.695)
+
+[node name="Piso_Terreo" type="CollisionShape2D" parent="Cenario_Solido" unique_id=1302587048]
+position = Vector2(1142.5146, 1262.8751)
+scale = Vector2(0.6950001, 0.6950001)
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="Piso_Terreo2" type="CollisionShape2D" parent="Cenario_Solido" unique_id=1585465685]
+position = Vector2(1202.8364, 53.82727)
+scale = Vector2(0.6950001, 0.6950001)
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="Piso_Meio" type="CollisionShape2D" parent="Cenario_Solido" unique_id=458970470]
+position = Vector2(1302.6638, 817.7633)
+scale = Vector2(0.69500005, 0.69500005)
+shape = SubResource("RectangleShape2D_floor_mid")
+one_way_collision = true
+
+[node name="Piso_Superior" type="CollisionShape2D" parent="Cenario_Solido" unique_id=1522678708]
+position = Vector2(1456.7307, 437.12653)
+scale = Vector2(0.69500005, 0.69500005)
+shape = SubResource("RectangleShape2D_floor_top")
+one_way_collision = true
+
+[node name="Piso_Superior2" type="CollisionShape2D" parent="Cenario_Solido" unique_id=1258952109]
+position = Vector2(186.32587, 440.97107)
+scale = Vector2(0.6950002, 0.6950002)
+shape = SubResource("RectangleShape2D_174a7")
+
+[node name="Parede_Esquerda" type="CollisionShape2D" parent="Cenario_Solido" unique_id=148672847]
+position = Vector2(89.02231, 664.5619)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Parede_Direita" type="CollisionShape2D" parent="Cenario_Solido" unique_id=1338074947]
+position = Vector2(2290.4763, 666.92145)
+scale = Vector2(0.69500005, 0.69500005)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Escada_Esquerda" type="StaticBody2D" parent="." unique_id=671736228]
+scale = Vector2(0.695, 0.695)
+
+[node name="Degrau_01" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=684914467]
+position = Vector2(534.95166, 1215.1364)
+scale = Vector2(0.6950002, 0.6950002)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_02" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=2115320888]
+position = Vector2(496.86874, 1173.8523)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_03" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=782851881]
+position = Vector2(465.81445, 1134.5168)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_04" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=619033088]
+position = Vector2(426.479, 1097.2517)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_05" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=1942972582]
+position = Vector2(395.4247, 1057.9164)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_06" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=1107899653]
+position = Vector2(356.08926, 1018.5809)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_07" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=54302756]
+position = Vector2(322.9647, 979.2454)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_08" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=433667326]
+position = Vector2(281.559, 937.83966)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_09" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=147849751]
+position = Vector2(244.29381, 892.29333)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_10" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=1800795861]
+position = Vector2(207.02867, 850.8876)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_11" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=1072988553]
+position = Vector2(180.11493, 813.62256)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_15" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=1443758638]
+position = Vector2(399.56525, 635.57794)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_16" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=78454004]
+position = Vector2(428.54926, 592.10187)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_17" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=64556713]
+position = Vector2(467.88474, 548.62585)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_18" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=596403363]
+position = Vector2(501.00928, 503.07956)
+scale = Vector2(0.695, 0.695)
+shape = SubResource("RectangleShape2D_step")
+one_way_collision = true
+
+[node name="Degrau_19" type="CollisionShape2D" parent="Escada_Esquerda" unique_id=1702875871]
+position = Vector2(540.3449, 456.8493)
+scale = Vector2(0.6950001, 0.6950001)
+shape = SubResource("RectangleShape2D_vqu1i")
+one_way_collision = true
+
+[node name="Area_Espinhos" type="Area2D" parent="." unique_id=1444699560]
+scale = Vector2(0.695, 0.695)
+
+[node name="Colisao_Dano_Esq" type="CollisionShape2D" parent="Area_Espinhos" unique_id=450058202]
+position = Vector2(883.94, 1188.3447)
+scale = Vector2(0.6950001, 0.6950001)
+shape = SubResource("RectangleShape2D_s5al1")
+
+[node name="Colisao_Dano_Dir" type="CollisionShape2D" parent="Area_Espinhos" unique_id=687816737]
+position = Vector2(1639.6667, 1180.0632)
+scale = Vector2(0.6950002, 0.6950002)
+shape = SubResource("RectangleShape2D_spikes")
+
+[node name="Colisao_Dano_Dir2" type="CollisionShape2D" parent="Area_Espinhos" unique_id=1039791132]
+position = Vector2(1434.7084, 1188.3444)
+scale = Vector2(0.6950002, 0.6950002)
+shape = SubResource("RectangleShape2D_lx225")
+
+[node name="Personagem" parent="." unique_id=705009762 instance=ExtResource("2_mcrxt")]
+position = Vector2(122.30216, 217.26617)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1149242314]
+layer = 1
+
+[node name="HUD" parent="ParallaxBackground" unique_id=1138574463 instance=ExtResource("3_lr6c0")]

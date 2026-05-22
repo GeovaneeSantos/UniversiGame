@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6ve180nokkpn"
-path="res://.godot/imported/Biblioteca.png-d7f1b2d8a685bca7ae74b0a2e2e83e02.ctex"
+uid="uid://bp85o7x42tj6t"
+path="res://.godot/imported/Laboratorio.png-3f3f39fdc2ee511a40edbd985ab9b6ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/Biblioteca.png"
-dest_files=["res://.godot/imported/Biblioteca.png-d7f1b2d8a685bca7ae74b0a2e2e83e02.ctex"]
+source_file="res://Imagens/Laboratorio.png"
+dest_files=["res://.godot/imported/Laboratorio.png-3f3f39fdc2ee511a40edbd985ab9b6ce.ctex"]
 
 [params]
 

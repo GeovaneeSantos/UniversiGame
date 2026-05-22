@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ditublj5srvjn" path="res://Imagens/Plataforma.png" id="3_24i2g"]
 [ext_resource type="PackedScene" uid="uid://ditgs367j4ajs" path="res://hud.tscn" id="5_24i2g"]
 [ext_resource type="PackedScene" uid="uid://b3tojgdgpmhxh" path="res://inimigo.tscn" id="6_3nwog"]
+[ext_resource type="PackedScene" uid="uid://cs4pw1i0eqwv" path="res://inimigo2.tscn" id="7_uywar"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uywar"]
 size = Vector2(121, 29)
@@ -192,6 +193,9 @@ position = Vector2(118, 389)
 
 [node name="Inimigo3" parent="." unique_id=1047698900 instance=ExtResource("6_3nwog")]
 position = Vector2(392, -56)
+
+[node name="Inimigo" parent="." unique_id=1487436645 instance=ExtResource("7_uywar")]
+position = Vector2(499, 198)
 
 [connection signal="body_entered" from="Area2D" to="." method="escada"]
 [connection signal="body_exited" from="Area2D" to="." method="sai_escada"]

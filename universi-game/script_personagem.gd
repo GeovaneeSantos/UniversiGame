@@ -43,10 +43,12 @@ func _process(delta: float) -> void:
 		if (Input.is_action_pressed("atirar") and is_on_floor()):
 			animando = true
 			$AnimationPlayer.play("book_throw")
+			
 				
 		if (Input.is_action_just_pressed("atacar") and is_on_floor()):
 			animando = true
 			$AnimationPlayer.play("attack")
+			
 			
 		var anim_atual = $AnimationPlayer.current_animation
 		if (anim_atual=="book_throw" || anim_atual=="attack"):

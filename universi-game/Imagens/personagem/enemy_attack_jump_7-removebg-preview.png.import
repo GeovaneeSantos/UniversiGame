@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6ve180nokkpn"
-path="res://.godot/imported/Biblioteca.png-d7f1b2d8a685bca7ae74b0a2e2e83e02.ctex"
+uid="uid://ddoamfuv1ou61"
+path="res://.godot/imported/enemy_attack_jump_7-removebg-preview.png-2be3e753a3c3f3b857b5a90e641096f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/Biblioteca.png"
-dest_files=["res://.godot/imported/Biblioteca.png-d7f1b2d8a685bca7ae74b0a2e2e83e02.ctex"]
+source_file="res://Imagens/personagem/enemy_attack_jump_7-removebg-preview.png"
+dest_files=["res://.godot/imported/enemy_attack_jump_7-removebg-preview.png-2be3e753a3c3f3b857b5a90e641096f2.ctex"]
 
 [params]
 
