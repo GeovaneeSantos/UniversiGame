@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://tr7et02iy0ci" path="res://Imagens/laboratorio1.png" id="2_fybow"]
 [ext_resource type="PackedScene" uid="uid://dhg7nn3jx2sw0" path="res://personagem.tscn" id="3_lr8nf"]
 [ext_resource type="PackedScene" uid="uid://ditgs367j4ajs" path="res://hud.tscn" id="4_n0wau"]
+[ext_resource type="PackedScene" uid="uid://b3tojgdgpmhxh" path="res://inimigo.tscn" id="5_so7lt"]
+[ext_resource type="PackedScene" uid="uid://cs4pw1i0eqwv" path="res://inimigo2.tscn" id="6_vp18q"]
+[ext_resource type="Texture2D" uid="uid://bnun156whxp4e" path="res://Imagens/fundo.png" id="7_vp18q"]
+[ext_resource type="PackedScene" uid="uid://d0b5312jtxj4j" path="res://cena_vida.tscn" id="8_em0w3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rfri"]
 size = Vector2(1118, 20)
@@ -192,11 +196,21 @@ position = Vector2(438.5, 399)
 shape = SubResource("RectangleShape2D_0cqao")
 one_way_collision = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1680458995]
+[node name="Area2D2" type="Area2D" parent="." unique_id=1680458995]
 position = Vector2(605, 183)
+collision_layer = 4
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1678789766]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1678789766]
 shape = SubResource("RectangleShape2D_lr8nf")
+disabled = true
+
+[node name="Label" type="Label" parent="Area2D2" unique_id=1192950434]
+offset_left = -36.0
+offset_top = -79.0
+offset_right = 39.0
+offset_bottom = -56.0
+text = "FECHADO"
 
 [node name="Personagem" parent="." unique_id=705009762 instance=ExtResource("3_lr8nf")]
 position = Vector2(93, 299)
@@ -206,4 +220,35 @@ layer = 1
 
 [node name="HUD" parent="ParallaxBackground" unique_id=1138574463 instance=ExtResource("4_n0wau")]
 
-[connection signal="body_entered" from="Area2D" to="." method="sair_fase"]
+[node name="Inimigo6" parent="." unique_id=2087576167 instance=ExtResource("5_so7lt")]
+position = Vector2(168, 129)
+
+[node name="Inimigo" parent="." unique_id=1257424230 instance=ExtResource("6_vp18q")]
+position = Vector2(750, 298)
+
+[node name="Inimigo2" parent="." unique_id=1649944861 instance=ExtResource("5_so7lt")]
+position = Vector2(251, 281)
+
+[node name="Inimigo3" parent="." unique_id=1575901175 instance=ExtResource("5_so7lt")]
+position = Vector2(664, 539)
+
+[node name="Inimigo4" parent="." unique_id=1011492479 instance=ExtResource("6_vp18q")]
+position = Vector2(719, 145)
+
+[node name="Inimigo5" parent="." unique_id=1612870545 instance=ExtResource("5_so7lt")]
+position = Vector2(253, 519)
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=1829146256]
+show_behind_parent = true
+light_mask = 0
+position = Vector2(588, 180)
+scale = Vector2(2.1093743, 2.1093748)
+texture = ExtResource("7_vp18q")
+
+[node name="Vida2" parent="." unique_id=1911877330 instance=ExtResource("8_em0w3")]
+position = Vector2(362, 546)
+
+[node name="Vida" parent="." unique_id=2133274537 instance=ExtResource("8_em0w3")]
+position = Vector2(460, 356)
+
+[connection signal="body_entered" from="Area2D2" to="." method="sair_fase"]

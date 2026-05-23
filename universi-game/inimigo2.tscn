@@ -81,7 +81,9 @@ size = Vector2(88, 70)
 
 [node name="Inimigo" type="Node2D" unique_id=2087576167]
 
-[node name="Inimigo" type="CharacterBody2D" parent="." unique_id=1935804188]
+[node name="Inimigo" type="CharacterBody2D" parent="." unique_id=1935804188 groups=["inimigos"]]
+light_mask = 4
+collision_layer = 4
 script = ExtResource("1_p6opy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Inimigo" unique_id=683321299]
@@ -103,6 +105,8 @@ position = Vector2(35, -7)
 
 [node name="Area2D" type="Area2D" parent="Inimigo" unique_id=1264005623]
 visibility_layer = 4
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo/Area2D" unique_id=2011246187]
 z_index = 1

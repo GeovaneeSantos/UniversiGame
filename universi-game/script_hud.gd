@@ -16,5 +16,6 @@ func _process(delta: float) -> void:
 	else:
 		$Vida.visible = false
 		$Vida2.visible = false
-		$Vida3.visible = false				
+		$Vida3.visible = false
+					
 		

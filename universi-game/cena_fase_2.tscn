@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://dirmetopv20re" path="res://script_fase_2.gd" id="1_0nwvv"]
 [ext_resource type="Texture2D" uid="uid://citotp21p5367" path="res://Imagens/biblioteca2.png" id="2_7c4ob"]
 [ext_resource type="PackedScene" uid="uid://dhg7nn3jx2sw0" path="res://personagem.tscn" id="3_cigd3"]
+[ext_resource type="PackedScene" uid="uid://d0b5312jtxj4j" path="res://cena_vida.tscn" id="3_ov5cb"]
 [ext_resource type="PackedScene" uid="uid://ditgs367j4ajs" path="res://hud.tscn" id="4_dxfa3"]
-[ext_resource type="PackedScene" uid="uid://mlb8pya8xhi3" path="res://area_dano.tscn" id="5_7c4ob"]
 [ext_resource type="PackedScene" uid="uid://cs4pw1i0eqwv" path="res://inimigo2.tscn" id="6_lrxf1"]
+[ext_resource type="PackedScene" uid="uid://b3tojgdgpmhxh" path="res://inimigo.tscn" id="7_ey0tx"]
+[ext_resource type="Texture2D" uid="uid://bnun156whxp4e" path="res://Imagens/fundo.png" id="8_ov5cb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8f1wn"]
 size = Vector2(1592.2063, 26.567474)
@@ -148,12 +150,6 @@ size = Vector2(32, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxfa3"]
 size = Vector2(120, 49)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrxf1"]
-size = Vector2(24.722816, 6.461624)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7c4ob"]
-size = Vector2(67, 22)
-
 [node name="Node2D" type="Node2D" unique_id=192757950]
 script = ExtResource("1_0nwvv")
 
@@ -236,6 +232,7 @@ shape = SubResource("RectangleShape2D_38tfe")
 [node name="colision15" type="CollisionShape2D" parent="Pisos_cenario" unique_id=1366651209]
 position = Vector2(1056.4141, 555.3115)
 shape = SubResource("RectangleShape2D_d12ux")
+one_way_collision = true
 
 [node name="colision16" type="CollisionShape2D" parent="Pisos_cenario" unique_id=15447537]
 position = Vector2(1138.4723, 568.93713)
@@ -270,46 +267,57 @@ shape = SubResource("RectangleShape2D_4n1ts")
 [node name="colision22" type="CollisionShape2D" parent="Pisos_cenario" unique_id=1649085835]
 position = Vector2(1081.2384, 541.76733)
 shape = SubResource("RectangleShape2D_030hv")
+one_way_collision = true
 
 [node name="colision23" type="CollisionShape2D" parent="Pisos_cenario" unique_id=966117347]
 position = Vector2(1097.788, 530.3069)
 shape = SubResource("RectangleShape2D_030hv")
+one_way_collision = true
 
 [node name="colision24" type="CollisionShape2D" parent="Pisos_cenario" unique_id=842017780]
 position = Vector2(1110.2002, 518.84644)
 shape = SubResource("RectangleShape2D_030hv")
+one_way_collision = true
 
 [node name="colision25" type="CollisionShape2D" parent="Pisos_cenario" unique_id=947876609]
 position = Vector2(1126.7496, 506.5843)
 shape = SubResource("RectangleShape2D_f1qbs")
+one_way_collision = true
 
 [node name="colision26" type="CollisionShape2D" parent="Pisos_cenario" unique_id=1129289339]
 position = Vector2(1140.541, 494.88364)
 shape = SubResource("RectangleShape2D_f1qbs")
+one_way_collision = true
 
 [node name="colision27" type="CollisionShape2D" parent="Pisos_cenario" unique_id=1984631065]
 position = Vector2(1157.0906, 484.46503)
 shape = SubResource("RectangleShape2D_f1qbs")
+one_way_collision = true
 
 [node name="colision28" type="CollisionShape2D" parent="Pisos_cenario" unique_id=1178495664]
 position = Vector2(1170.8818, 470.92084)
 shape = SubResource("RectangleShape2D_f1qbs")
+one_way_collision = true
 
 [node name="colision29" type="CollisionShape2D" parent="Pisos_cenario" unique_id=786775723]
 position = Vector2(1184.6731, 457.37668)
 shape = SubResource("RectangleShape2D_f1qbs")
+one_way_collision = true
 
 [node name="colision30" type="CollisionShape2D" parent="Pisos_cenario" unique_id=694115185]
 position = Vector2(1199.4988, 444.7543)
 shape = SubResource("RectangleShape2D_07bfa")
+one_way_collision = true
 
 [node name="colision31" type="CollisionShape2D" parent="Pisos_cenario" unique_id=267316313]
 position = Vector2(1216.3932, 433.4139)
 shape = SubResource("RectangleShape2D_07bfa")
+one_way_collision = true
 
 [node name="colision32" type="CollisionShape2D" parent="Pisos_cenario" unique_id=1403788567]
 position = Vector2(1231.5636, 420.91156)
 shape = SubResource("RectangleShape2D_07bfa")
+one_way_collision = true
 
 [node name="colision33" type="CollisionShape2D" parent="Pisos_cenario" unique_id=2147104701]
 position = Vector2(1469.6359, 371.88412)
@@ -436,11 +444,28 @@ shape = SubResource("RectangleShape2D_f54sl")
 position = Vector2(861, 217)
 shape = SubResource("RectangleShape2D_ag56j")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=924926032]
-position = Vector2(998, 597)
+[node name="Vida2" parent="." unique_id=1911877330 instance=ExtResource("3_ov5cb")]
+position = Vector2(1096, 582)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=797076757]
+[node name="Vida" parent="." unique_id=1496259822 instance=ExtResource("3_ov5cb")]
+position = Vector2(274, 241)
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=924926032]
+position = Vector2(998, 597)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=797076757]
 shape = SubResource("RectangleShape2D_dxfa3")
+disabled = true
+
+[node name="Label" type="Label" parent="Area2D2" unique_id=1858570236]
+offset_left = -36.0
+offset_top = -79.0
+offset_right = 39.0
+offset_bottom = -56.0
+text = "FECHADO"
+metadata/_edit_use_anchors_ = true
 
 [node name="Personagem" parent="." unique_id=705009762 instance=ExtResource("3_cigd3")]
 position = Vector2(376, 457)
@@ -450,19 +475,27 @@ layer = 1
 
 [node name="HUD" parent="ParallaxBackground" unique_id=1138574463 instance=ExtResource("4_dxfa3")]
 
-[node name="AreaDano" parent="." unique_id=1095317021 instance=ExtResource("5_7c4ob")]
-position = Vector2(453, 193)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDano" unique_id=123408536]
-position = Vector2(1.5, 4.5)
-scale = Vector2(3.276327, 3.249957)
-shape = SubResource("RectangleShape2D_lrxf1")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaDano" unique_id=1753257027]
-position = Vector2(166.5, 3)
-shape = SubResource("RectangleShape2D_7c4ob")
-
 [node name="Inimigo" parent="." unique_id=2087576167 instance=ExtResource("6_lrxf1")]
 position = Vector2(571, 323)
 
-[connection signal="body_entered" from="Area2D" to="." method="sair_fase"]
+[node name="Inimigo2" parent="." unique_id=1882303359 instance=ExtResource("7_ey0tx")]
+position = Vector2(72, 306)
+
+[node name="Inimigo3" parent="." unique_id=233399738 instance=ExtResource("7_ey0tx")]
+position = Vector2(1093, 300)
+
+[node name="Inimigo4" parent="." unique_id=1529953352 instance=ExtResource("6_lrxf1")]
+position = Vector2(540, 170)
+
+[node name="Inimigo5" parent="." unique_id=661992255 instance=ExtResource("7_ey0tx")]
+position = Vector2(74, 544)
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=1431910294]
+show_behind_parent = true
+light_mask = 0
+position = Vector2(588, 180)
+scale = Vector2(2.1093743, 2.1093748)
+texture = ExtResource("8_ov5cb")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="Area2D2" to="." method="sair_fase"]

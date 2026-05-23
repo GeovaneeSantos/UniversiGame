@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://c5c2uokfsjsrq" path="res://cena_fase_6.gd" id="1_fimab"]
 [ext_resource type="PackedScene" uid="uid://dhg7nn3jx2sw0" path="res://personagem.tscn" id="3_3g21t"]
 [ext_resource type="PackedScene" uid="uid://ditgs367j4ajs" path="res://hud.tscn" id="4_clxgl"]
+[ext_resource type="PackedScene" uid="uid://b3tojgdgpmhxh" path="res://inimigo.tscn" id="5_ts7na"]
+[ext_resource type="PackedScene" uid="uid://cs4pw1i0eqwv" path="res://inimigo2.tscn" id="6_avg2a"]
+[ext_resource type="Texture2D" uid="uid://bnun156whxp4e" path="res://Imagens/fundo.png" id="7_avg2a"]
+[ext_resource type="PackedScene" uid="uid://d0b5312jtxj4j" path="res://cena_vida.tscn" id="8_dc065"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d52pd"]
 size = Vector2(1151.5, 23.5)
@@ -81,10 +85,6 @@ radius = 13.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_00cu2"]
 radius = 13.0
 height = 33.943604
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vcy3a"]
-radius = 4.9999695
-height = 50.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm2ey"]
 size = Vector2(82, 96)
@@ -189,7 +189,7 @@ shape = SubResource("RectangleShape2D_47n40")
 one_way_collision = true
 
 [node name="Colision22" type="CollisionShape2D" parent="StaticBody2D" unique_id=1632489147]
-position = Vector2(975, 270.27344)
+position = Vector2(975, 276.27344)
 shape = SubResource("RectangleShape2D_4p2e5")
 one_way_collision = true
 
@@ -216,7 +216,7 @@ shape = SubResource("RectangleShape2D_wdxtd")
 one_way_collision = true
 
 [node name="Colision31" type="CollisionShape2D" parent="StaticBody2D" unique_id=923225587]
-position = Vector2(877.6875, 164)
+position = Vector2(877.6875, 162)
 shape = SubResource("RectangleShape2D_ltp1i")
 one_way_collision = true
 
@@ -275,26 +275,60 @@ position = Vector2(971, 489.99997)
 rotation = -0.057595864
 shape = SubResource("CapsuleShape2D_00cu2")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=160093515]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1277131931]
+layer = 1
 
-[node name="AreaDano" type="CollisionShape2D" parent="Area2D" unique_id=1803404751]
-position = Vector2(654, 513)
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_vcy3a")
+[node name="HUD" parent="ParallaxBackground" unique_id=1138574463 instance=ExtResource("4_clxgl")]
+
+[node name="Personagem" parent="." unique_id=705009762 instance=ExtResource("3_3g21t")]
+position = Vector2(118, 216)
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=1609549164]
 position = Vector2(694, 90)
+collision_layer = 4
+collision_mask = 2
+
+[node name="Label" type="Label" parent="Area2D2" unique_id=722586115]
+offset_left = -36.0
+offset_top = -79.0
+offset_right = 39.0
+offset_bottom = -56.0
+text = "FECHADO"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=180024545]
 position = Vector2(-4, 2)
 shape = SubResource("RectangleShape2D_qm2ey")
+disabled = true
 
-[node name="Personagem" parent="Area2D2" unique_id=705009762 instance=ExtResource("3_3g21t")]
-position = Vector2(-576, 126)
+[node name="Inimigo6" parent="." unique_id=2087576167 instance=ExtResource("5_ts7na")]
+position = Vector2(168, 129)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Area2D2" unique_id=1277131931]
-layer = 1
+[node name="Inimigo" parent="." unique_id=164474102 instance=ExtResource("6_avg2a")]
+position = Vector2(967, 215)
 
-[node name="HUD" parent="Area2D2/ParallaxBackground" unique_id=1138574463 instance=ExtResource("4_clxgl")]
+[node name="Inimigo2" parent="." unique_id=1271985139 instance=ExtResource("5_ts7na")]
+position = Vector2(282, 217)
+
+[node name="Inimigo3" parent="." unique_id=684557981 instance=ExtResource("5_ts7na")]
+position = Vector2(664, 539)
+
+[node name="Inimigo4" parent="." unique_id=495899093 instance=ExtResource("6_avg2a")]
+position = Vector2(874, 86)
+
+[node name="Inimigo5" parent="." unique_id=526990028 instance=ExtResource("5_ts7na")]
+position = Vector2(241, 540)
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=2085034770]
+show_behind_parent = true
+light_mask = 0
+position = Vector2(571.00006, 336)
+scale = Vector2(2.1093743, 2.1093748)
+texture = ExtResource("7_avg2a")
+
+[node name="Vida2" parent="." unique_id=1911877330 instance=ExtResource("8_dc065")]
+position = Vector2(747, 491)
+
+[node name="Vida" parent="." unique_id=2041943162 instance=ExtResource("8_dc065")]
+position = Vector2(418, 192)
 
 [connection signal="body_entered" from="Area2D2" to="." method="sair_fase"]

@@ -14,10 +14,8 @@ func _process(delta: float) -> void:
 	
 
 func eliminar_inimigo(body: Node2D) -> void:
-	if (body.name=="Inimigo"):
-		body.queue_free()
-		queue_free()
-		ScriptGlobal.inimigos_fase1 -= 1
+	if body.is_in_group("inimigos"):
+			body.queue_free()
 	
 	
 	

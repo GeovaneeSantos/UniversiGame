@@ -6,7 +6,7 @@ var velocidade = 600
 
 func _process(delta: float) -> void:
 	velocity.y += gravidade
-	var personagem = get_tree().root.get_node("Fase_1/Personagem/CharacterBody2D") # Permite acessar qualquer nó, bastar informar o caminho
+	var personagem = get_tree().get_first_node_in_group("jogador") # Permite acessar qualquer nó, bastar informar o caminho
 	if (is_on_floor()):
 		var posx_personagem = personagem.global_position.x
 		var posx_inimigo    = global_position.x

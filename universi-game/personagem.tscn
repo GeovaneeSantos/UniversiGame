@@ -32,12 +32,37 @@
 [ext_resource type="Texture2D" uid="uid://vosq1p8elaxf" path="res://Imagens/personagem/walk_3-removebg-preview.png" id="24_n1s46"]
 [ext_resource type="Texture2D" uid="uid://6ffjcmbmf1e1" path="res://Imagens/personagem/walk_4-removebg-preview.png" id="25_7uchw"]
 [ext_resource type="AudioStream" uid="uid://da3flu7m8e1dy" path="res://Sons/attack.mp3" id="31_73hqi"]
+[ext_resource type="AudioStream" uid="uid://cxdyaae6snhwh" path="res://Sons/Ganhando_vida.wav" id="33_6q1ok"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3elh"]
 size = Vector2(43.5, 77)
 
 [sub_resource type="Animation" id="Animation_gn376"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:debug_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.6, 0.7, 0.42)]
+}
 
 [sub_resource type="Animation" id="Animation_d7snr"]
 resource_name = "attack"
@@ -150,6 +175,18 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0.8333333)
 }
 tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_5j3ho"]
 resource_name = "death"
@@ -208,15 +245,28 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.2, 2.6, 3, 4, 4.5, 5, 5.5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.8, 2.2, 2.6, 3, 4, 4.5, 5, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_d7snr"), ExtResource("13_ogu8x"), ExtResource("14_5j3ho"), ExtResource("15_1x46h"), ExtResource("16_ccp6k"), ExtResource("16_ccp6k"), ExtResource("15_1x46h"), ExtResource("14_5j3ho")]
+"values": [ExtResource("2_d7snr"), ExtResource("2_d7snr"), ExtResource("13_ogu8x"), ExtResource("14_5j3ho"), ExtResource("15_1x46h"), ExtResource("16_ccp6k"), ExtResource("16_ccp6k"), ExtResource("15_1x46h"), ExtResource("14_5j3ho")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_7k68m"]
 resource_name = "jump"
 length = 0.8
+loop_mode = 1
 step = 0.16
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -225,10 +275,22 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5, 0.6666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5, 0.6666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("21_00wma"), ExtResource("18_hu6wl"), ExtResource("19_kfruh"), ExtResource("20_mu6uh"), ExtResource("21_00wma")]
+"values": [ExtResource("21_00wma"), ExtResource("18_hu6wl"), ExtResource("19_kfruh"), ExtResource("20_mu6uh"), ExtResource("21_00wma"), ExtResource("21_00wma")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ogp2y"]
@@ -247,6 +309,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("22_6f5ic"), ExtResource("23_fsrii"), ExtResource("25_7uchw"), ExtResource("24_n1s46"), ExtResource("22_6f5ic")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:debug_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.6, 0.7, 0.42)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ri2ti"]
 _data = {
@@ -263,14 +337,16 @@ _data = {
 size = Vector2(34, 66)
 
 [node name="Personagem" type="Node2D" unique_id=705009762]
+position = Vector2(557, 392)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=512876693]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=512876693 groups=["jogador"]]
+collision_layer = 2
 script = ExtResource("1_vvf27")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2145075188]
 position = Vector2(-0.5000034, 6.7466564)
 scale = Vector2(0.17666663, 0.16501336)
-texture = ExtResource("12_krywo")
+texture = ExtResource("21_00wma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=792113259]
 position = Vector2(0.25, 8.5)
@@ -279,17 +355,13 @@ shape = SubResource("RectangleShape2D_s3elh")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=251283360]
 libraries/ = SubResource("AnimationLibrary_ri2ti")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1492413956]
-limit_left = 0
-limit_top = -277
-limit_right = 1150
-limit_bottom = 650
-
 [node name="Marker2D" type="Marker2D" parent="CharacterBody2D" unique_id=712992257]
 position = Vector2(38, -6)
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=659396758]
 position = Vector2(43, 7)
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=71885678]
 position = Vector2(-1, 1)
@@ -297,5 +369,17 @@ shape = SubResource("RectangleShape2D_d7snr")
 disabled = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1568515244]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1927206746]
+position = Vector2(-1, 4)
+zoom = Vector2(1.3, 1.3)
+limit_left = -5
+limit_top = -478
+limit_right = 1376
+limit_bottom = 1301
+limit_smoothed = true
+
+[node name="AudioStreamPlayer_ganha_vida" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=178120875]
+stream = ExtResource("33_6q1ok")
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="eliminar_inimigo"]

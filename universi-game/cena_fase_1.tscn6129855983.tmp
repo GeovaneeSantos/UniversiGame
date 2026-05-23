@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://ditgs367j4ajs" path="res://hud.tscn" id="5_24i2g"]
 [ext_resource type="PackedScene" uid="uid://b3tojgdgpmhxh" path="res://inimigo.tscn" id="6_3nwog"]
 [ext_resource type="PackedScene" uid="uid://cs4pw1i0eqwv" path="res://inimigo2.tscn" id="7_uywar"]
-[ext_resource type="Texture2D" uid="uid://bnun156whxp4e" path="res://Imagens/fundo.png" id="8_74v1j"]
-[ext_resource type="PackedScene" uid="uid://d0b5312jtxj4j" path="res://cena_vida.tscn" id="9_p6fei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uywar"]
 size = Vector2(121, 29)
@@ -78,7 +76,7 @@ size = Vector2(60, 110)
 [node name="Fase_1" type="Node2D" unique_id=1215870152]
 script = ExtResource("1_2y5kg")
 metadata/_edit_vertical_guides_ = [1151.0]
-metadata/_edit_horizontal_guides_ = [-277.0, 651.0, -212.0, -237.0]
+metadata/_edit_horizontal_guides_ = [-277.0, 651.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1364901806]
 position = Vector2(578, 211.5)
@@ -176,7 +174,6 @@ offset_top = -79.0
 offset_right = 39.0
 offset_bottom = -56.0
 text = "FECHADO"
-metadata/_edit_use_anchors_ = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=609650188]
 layer = 1
@@ -200,17 +197,5 @@ position = Vector2(397, -52)
 
 [node name="Inimigo5" parent="." unique_id=402339259 instance=ExtResource("6_3nwog")]
 position = Vector2(124, 381)
-
-[node name="Fundo" type="Sprite2D" parent="." unique_id=294574522]
-show_behind_parent = true
-position = Vector2(814, 176.00012)
-scale = Vector2(2.3541665, 2.3541667)
-texture = ExtResource("8_74v1j")
-
-[node name="Vida2" parent="." unique_id=1911877330 instance=ExtResource("9_p6fei")]
-position = Vector2(814, -32)
-
-[node name="Vida" parent="." unique_id=936035822 instance=ExtResource("9_p6fei")]
-position = Vector2(441, 250)
 
 [connection signal="body_entered" from="Area2D2" to="." method="sair_fase"]

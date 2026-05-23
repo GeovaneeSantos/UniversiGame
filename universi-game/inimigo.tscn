@@ -116,11 +116,12 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0fh3"]
-size = Vector2(88, 70)
+size = Vector2(94, 74)
 
 [node name="Inimigo" type="Node2D" unique_id=2087576167]
 
-[node name="Inimigo" type="CharacterBody2D" parent="." unique_id=1935804188]
+[node name="Inimigo" type="CharacterBody2D" parent="." unique_id=1935804188 groups=["inimigos"]]
+collision_layer = 4
 script = ExtResource("1_030df")
 comportamento = 2
 
@@ -140,9 +141,9 @@ position = Vector2(35, -7)
 
 [node name="Area2D" type="Area2D" parent="Inimigo" unique_id=1264005623]
 visibility_layer = 4
+collision_layer = 4
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo/Area2D" unique_id=2011246187]
-position = Vector2(1, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo/Area2D" unique_id=530768592]
 shape = SubResource("RectangleShape2D_l0fh3")
-disabled = true
-debug_color = Color(0.6505108, 0.49391675, 0.45186257, 0.41960785)
+debug_color = Color(0.94279826, 0.15883285, 0.45911187, 0.41960785)

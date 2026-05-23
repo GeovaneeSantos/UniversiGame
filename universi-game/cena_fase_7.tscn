@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://2sgjwru86m0a" path="res://Imagens/mecanica.png" id="1_mxipl"]
 [ext_resource type="PackedScene" uid="uid://dhg7nn3jx2sw0" path="res://personagem.tscn" id="2_mcrxt"]
 [ext_resource type="PackedScene" uid="uid://ditgs367j4ajs" path="res://hud.tscn" id="3_lr6c0"]
+[ext_resource type="Texture2D" uid="uid://bnun156whxp4e" path="res://Imagens/fundo.png" id="4_lr6c0"]
+[ext_resource type="PackedScene" uid="uid://d0b5312jtxj4j" path="res://cena_vida.tscn" id="5_ayo0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
 size = Vector2(3271.5708, 60)
@@ -207,3 +209,16 @@ position = Vector2(122.30216, 217.26617)
 layer = 1
 
 [node name="HUD" parent="ParallaxBackground" unique_id=1138574463 instance=ExtResource("3_lr6c0")]
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=762832512]
+show_behind_parent = true
+light_mask = 0
+position = Vector2(853.2375, 492.08633)
+scale = Vector2(2.1093743, 2.1093748)
+texture = ExtResource("4_lr6c0")
+
+[node name="Vida2" parent="." unique_id=1911877330 instance=ExtResource("5_ayo0h")]
+position = Vector2(1443.1655, 257.55396)
+
+[node name="Vida" parent="." unique_id=1958444463 instance=ExtResource("5_ayo0h")]
+position = Vector2(467.62592, 496.4029)

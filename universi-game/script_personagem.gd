@@ -36,9 +36,8 @@ func _process(delta: float) -> void:
 			$Area2D.position.x = abs($Area2D.position.x) # abs converter negativo para positivo
 			
 		if (Input.is_action_just_pressed("ui_up") and is_on_floor()):
-			get_tree().root.print_tree()
 			velocity.y = -forca_pulo
-			animando = false
+			animando = false	
 			
 		if (Input.is_action_pressed("atirar") and is_on_floor()):
 			animando = true
@@ -49,6 +48,10 @@ func _process(delta: float) -> void:
 			animando = true
 			$AnimationPlayer.play("attack")
 			
+			await get_tree().process_frame
+			
+			# Agora sim, vai mostrar 3, 2, 1... de forma precisa!
+			print(get_tree().get_nodes_in_group("inimigos").size())
 			
 		var anim_atual = $AnimationPlayer.current_animation
 		if (anim_atual=="book_throw" || anim_atual=="attack"):
@@ -74,31 +77,17 @@ func spawnar_livro():
 	else:
 		objeto_livro.get_node("Area2D").direcao = 1
 	
-	print(objeto_livro.get_node("Area2D").direcao)
-	
 	add_sibling(objeto_livro)
 	objeto_livro.global_position = $Marker2D.global_position
 	
 func eliminar_inimigo(body: Node2D) -> void:
-	if (body.name=="Inimigo"):
+	 
 		body.queue_free()
-		ScriptGlobal.inimigos_fase1 -= 1
 		
 func ir_para_gamer_over():
 	get_tree().change_scene_to_file("res://cena_game_over.tscn")
 				
-func sofrer_dano():
-	#if (colidindo_com_inimigo):
-		print("dano")
-		ScriptGlobal.vidas -= valor_dano
-		#$AnimationPlayerDano.play("dano")
-
 func ganhar_vida():
+	ScriptGlobal.vidas += 1
 	$AudioStreamPlayer_ganha_vida.play()
-	ScriptGlobal.qtd_vidas += 1
-	
-
-	
-	
-	
-	
+ 	

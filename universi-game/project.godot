@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 ScriptGlobal="*uid://datimgj80mcjx"
 
+[global_group]
+
+inimigos=""
+jogador=""
+
 [input]
 
 atacar={
