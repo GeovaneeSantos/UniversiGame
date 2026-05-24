@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://2u8k5tar1hr3"]
+
+[ext_resource type="Script" uid="uid://xts7gg3l36hr" path="res://script.gd" id="1_eypof"]
+[ext_resource type="Resource" uid="uid://cblb8mqf3bxq" path="res://tabela_drops.tres" id="2_2iy6u"]
+[ext_resource type="Texture2D" uid="uid://doutiy1pk08ed" path="res://Imagens/personagem/andando_8-removebg-preview.png" id="2_wq6jo"]
+[ext_resource type="Texture2D" uid="uid://bipt5bggbvxe2" path="res://Imagens/personagem/andando_2-removebg-preview.png" id="3_pd4b2"]
+[ext_resource type="Texture2D" uid="uid://dk4tboeo0u6wg" path="res://Imagens/personagem/andando_3-removebg-preview.png" id="4_8lkmg"]
+[ext_resource type="Texture2D" uid="uid://2mkj7nbx41un" path="res://Imagens/personagem/andando_4-removebg-preview.png" id="5_nmmpl"]
+[ext_resource type="Texture2D" uid="uid://bxbpsxycjrb23" path="res://Imagens/personagem/andando_5-removebg-preview.png" id="6_2iy6u"]
+[ext_resource type="Texture2D" uid="uid://cidlku31ip1gf" path="res://Imagens/personagem/andando_6-removebg-preview.png" id="7_af8as"]
+[ext_resource type="Texture2D" uid="uid://b5d4jbxcso541" path="res://Imagens/personagem/andando_7-removebg-preview.png" id="8_po7ig"]
+[ext_resource type="Texture2D" uid="uid://jmsv6oqapy3x" path="res://Imagens/personagem/andando_1-removebg-preview.png" id="9_8our6"]
+[ext_resource type="Texture2D" uid="uid://ci6oag2s8sodp" path="res://Imagens/personagem/latido_1-removebg-preview.png" id="10_nmmpl"]
+[ext_resource type="Texture2D" uid="uid://bq2ujmrh0pd4r" path="res://Imagens/personagem/latido_2-removebg-preview.png" id="11_2iy6u"]
+[ext_resource type="Texture2D" uid="uid://euqbumyftk7n" path="res://Imagens/personagem/latido_3-removebg-preview.png" id="12_af8as"]
+[ext_resource type="Texture2D" uid="uid://or3ka1bdyycp" path="res://Imagens/personagem/latido_4-removebg-preview.png" id="13_po7ig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksg45"]
+size = Vector2(50, 48)
+
+[sub_resource type="Animation" id="Animation_otw45"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_wq6jo")]
+}
+
+[sub_resource type="Animation" id="Animation_gyrjr"]
+resource_name = "andando"
+loop_mode = 1
+step = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_wq6jo"), ExtResource("3_pd4b2"), ExtResource("4_8lkmg"), ExtResource("5_nmmpl"), ExtResource("6_2iy6u"), ExtResource("7_af8as"), ExtResource("8_po7ig"), ExtResource("2_wq6jo")]
+}
+
+[sub_resource type="Animation" id="Animation_i6ka3"]
+resource_name = "idle"
+step = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_wq6jo"), ExtResource("9_8our6"), ExtResource("2_wq6jo")]
+}
+
+[sub_resource type="Animation" id="Animation_8our6"]
+resource_name = "latido"
+step = 0.24
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_nmmpl"), ExtResource("11_2iy6u"), ExtResource("12_af8as"), ExtResource("13_po7ig")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pn6j3"]
+_data = {
+&"RESET": SubResource("Animation_otw45"),
+&"andando": SubResource("Animation_gyrjr"),
+&"idle": SubResource("Animation_i6ka3"),
+&"latido": SubResource("Animation_8our6")
+}
+
+[node name="Cachorro" type="Node2D" unique_id=1144244247]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=969425944]
+script = ExtResource("1_eypof")
+distancia_minima = 100.0
+velocidade_perseguicao = 50.0
+loot_table = ExtResource("2_2iy6u")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1610491557]
+scale = Vector2(0.16541354, 0.16541353)
+texture = ExtResource("2_wq6jo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=926597678]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_ksg45")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=231453412]
+libraries/ = SubResource("AnimationLibrary_pn6j3")

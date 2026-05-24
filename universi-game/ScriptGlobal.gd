@@ -1,10 +1,9 @@
 extends Node
-@export var vidas = 3
-var dano
-var inimigos_fase1 = 3
-
+@export var vidas = 5
+var protec
+var biscoitos = 0
 func inicializar():
-	vidas = 3
+	vidas = 5
 	
 func _ready() -> void:
 	inicializar()

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LootItem" format=3 uid="uid://6xatwh6rwng6"]
+
+[ext_resource type="PackedScene" uid="uid://d0b5312jtxj4j" path="res://cena_vida.tscn" id="1_kale6"]
+[ext_resource type="Script" uid="uid://bhadjfxgh7y4i" path="res://LootItem.gd" id="2_x155m"]
+
+[resource]
+script = ExtResource("2_x155m")
+item_scene = ExtResource("1_kale6")
+drop_chance = 40.0
+metadata/_custom_type_script = "uid://bhadjfxgh7y4i"

@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://v43r5sxdljut"]
+
+[ext_resource type="Script" uid="uid://e7gmv6ybpsnl" path="res://inimigo_3.gd" id="1_6lmkn"]
+[ext_resource type="Texture2D" uid="uid://3s48ybf5aq0n" path="res://Imagens/personagem/cell_attack_1-removebg-preview.png" id="2_73q5e"]
+[ext_resource type="Texture2D" uid="uid://cdl5y0334g14u" path="res://Imagens/personagem/bug - ChangeCell.png" id="3_mub4u"]
+[ext_resource type="Texture2D" uid="uid://cty4ylh0g81kv" path="res://Imagens/personagem/2 - ChangeCell.png" id="4_6lmkn"]
+[ext_resource type="Texture2D" uid="uid://bjk5woyh0fus2" path="res://Imagens/personagem/3 - ChangeCell.png" id="5_d7vlu"]
+[ext_resource type="Texture2D" uid="uid://dj303wq83i73r" path="res://Imagens/personagem/4 - ChangeCell.png" id="6_68mih"]
+[ext_resource type="Texture2D" uid="uid://qi73nblwgdr" path="res://Imagens/personagem/5 - ChangeCell.png" id="7_nj74w"]
+[ext_resource type="Texture2D" uid="uid://7x34tk5wkf56" path="res://Imagens/personagem/6 - ChangeCell.png" id="8_uecb7"]
+[ext_resource type="Texture2D" uid="uid://bd3feeyi1a0b" path="res://Imagens/personagem/magia_1.png" id="9_6lmkn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enrbn"]
+size = Vector2(96, 76)
+
+[sub_resource type="Animation" id="Animation_eewpo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_73q5e")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:comportamento")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Magia1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3af6e"]
+resource_name = "idle"
+length = 6.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2, 3, 4, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_mub4u"), ExtResource("4_6lmkn"), ExtResource("3_mub4u"), ExtResource("5_d7vlu"), ExtResource("3_mub4u"), ExtResource("6_68mih")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:comportamento")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Magia1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nglqo"]
+resource_name = "spell"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_mub4u"), ExtResource("7_nj74w"), ExtResource("7_nj74w"), ExtResource("8_uecb7"), ExtResource("8_uecb7")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spell"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:comportamento")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Magia1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f2mw5"]
+_data = {
+&"RESET": SubResource("Animation_eewpo"),
+&"idle": SubResource("Animation_3af6e"),
+&"spell": SubResource("Animation_nglqo")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0fh3"]
+size = Vector2(94, 74)
+
+[node name="Inimigo" type="Node2D" unique_id=2087576167]
+
+[node name="Inimigo" type="CharacterBody2D" parent="." unique_id=1935804188 groups=["inimigos"]]
+collision_layer = 4
+script = ExtResource("1_6lmkn")
+comportamento = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Inimigo" unique_id=683321299]
+scale = Vector2(0.2474916, 0.24749161)
+texture = ExtResource("2_73q5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo" unique_id=1324156660]
+shape = SubResource("RectangleShape2D_enrbn")
+one_way_collision_margin = 15.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Inimigo" unique_id=1750978858]
+libraries/ = SubResource("AnimationLibrary_f2mw5")
+
+[node name="Marker2D" type="Marker2D" parent="Inimigo" unique_id=1060693762]
+position = Vector2(5, 7)
+
+[node name="Area2D" type="Area2D" parent="Inimigo" unique_id=1264005623]
+visibility_layer = 4
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo/Area2D" unique_id=530768592]
+shape = SubResource("RectangleShape2D_l0fh3")
+debug_color = Color(0.94279826, 0.15883285, 0.45911187, 0.41960785)
+
+[node name="Magia1" type="Sprite2D" parent="." unique_id=1456450631]
+position = Vector2(55.448486, 6.9999995)
+scale = Vector2(0.23369472, 0.095238104)
+texture = ExtResource("9_6lmkn")

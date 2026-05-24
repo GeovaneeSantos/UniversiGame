@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cs4pw1i0eqwv" path="res://inimigo2.tscn" id="6_lrxf1"]
 [ext_resource type="PackedScene" uid="uid://b3tojgdgpmhxh" path="res://inimigo.tscn" id="7_ey0tx"]
 [ext_resource type="Texture2D" uid="uid://bnun156whxp4e" path="res://Imagens/fundo.png" id="8_ov5cb"]
+[ext_resource type="PackedScene" uid="uid://bwx5u1qvkfm4k" path="res://inimigo_4.tscn" id="9_nm6s6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8f1wn"]
 size = Vector2(1592.2063, 26.567474)
@@ -447,9 +448,6 @@ shape = SubResource("RectangleShape2D_ag56j")
 [node name="Vida2" parent="." unique_id=1911877330 instance=ExtResource("3_ov5cb")]
 position = Vector2(1096, 582)
 
-[node name="Vida" parent="." unique_id=1496259822 instance=ExtResource("3_ov5cb")]
-position = Vector2(274, 241)
-
 [node name="Area2D2" type="Area2D" parent="." unique_id=924926032]
 position = Vector2(998, 597)
 collision_layer = 4
@@ -475,9 +473,6 @@ layer = 1
 
 [node name="HUD" parent="ParallaxBackground" unique_id=1138574463 instance=ExtResource("4_dxfa3")]
 
-[node name="Inimigo" parent="." unique_id=2087576167 instance=ExtResource("6_lrxf1")]
-position = Vector2(571, 323)
-
 [node name="Inimigo2" parent="." unique_id=1882303359 instance=ExtResource("7_ey0tx")]
 position = Vector2(72, 306)
 
@@ -497,5 +492,8 @@ position = Vector2(588, 180)
 scale = Vector2(2.1093743, 2.1093748)
 texture = ExtResource("8_ov5cb")
 metadata/_edit_lock_ = true
+
+[node name="Inimigo7" parent="." unique_id=2087576167 instance=ExtResource("9_nm6s6")]
+position = Vector2(530, 320)
 
 [connection signal="body_entered" from="Area2D2" to="." method="sair_fase"]

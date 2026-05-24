@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LootItem" format=3 uid="uid://cmnhcycpd68do"]
+
+[ext_resource type="PackedScene" uid="uid://dnjym4hsvr73c" path="res://cena_biscoito.tscn" id="1_p7vdo"]
+[ext_resource type="Script" uid="uid://bhadjfxgh7y4i" path="res://LootItem.gd" id="1_pohqx"]
+
+[resource]
+script = ExtResource("1_pohqx")
+item_name = "Biscoito"
+item_scene = ExtResource("1_p7vdo")
+drop_chance = 30.0
+metadata/_custom_type_script = "uid://bhadjfxgh7y4i"

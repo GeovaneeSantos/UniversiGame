@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b3tojgdgpmhxh" path="res://inimigo.tscn" id="6_3nwog"]
 [ext_resource type="PackedScene" uid="uid://cs4pw1i0eqwv" path="res://inimigo2.tscn" id="7_uywar"]
 [ext_resource type="Texture2D" uid="uid://bnun156whxp4e" path="res://Imagens/fundo.png" id="8_74v1j"]
-[ext_resource type="PackedScene" uid="uid://d0b5312jtxj4j" path="res://cena_vida.tscn" id="9_p6fei"]
+[ext_resource type="PackedScene" uid="uid://v43r5sxdljut" path="res://inimigo_3.tscn" id="10_2hk2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uywar"]
 size = Vector2(121, 29)
@@ -207,10 +207,7 @@ position = Vector2(814, 176.00012)
 scale = Vector2(2.3541665, 2.3541667)
 texture = ExtResource("8_74v1j")
 
-[node name="Vida2" parent="." unique_id=1911877330 instance=ExtResource("9_p6fei")]
-position = Vector2(814, -32)
-
-[node name="Vida" parent="." unique_id=936035822 instance=ExtResource("9_p6fei")]
-position = Vector2(441, 250)
+[node name="Inimigo6" parent="." unique_id=244919612 instance=ExtResource("10_2hk2v")]
+position = Vector2(823, 455)
 
 [connection signal="body_entered" from="Area2D2" to="." method="sair_fase"]

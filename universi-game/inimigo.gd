@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 var gravidade   = 30
 var forcao_pulo = 600
 var velocidade = 600
@@ -8,6 +9,6 @@ func _process(delta: float) -> void:
 	velocity.y += gravidade
 	move_and_slide()
 func attack(body: Node2D) -> void:
-	if(body.name == "CharacterBody2D"):
+	if(body.name == "CharacterBody2D" and not ScriptGlobal.protec):
 		ScriptGlobal.vidas -= 1
 # Replace with function body.

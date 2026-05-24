@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dnjym4hsvr73c"]
+
+[ext_resource type="Script" uid="uid://qrxegi8ne31k" path="res://script_biscoito.gd" id="1_ppm31"]
+[ext_resource type="Texture2D" uid="uid://dd0gv6y4tjiwy" path="res://Imagens/biscoito.png" id="2_1b27c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hw88q"]
+size = Vector2(36, 22)
+
+[node name="Vida" type="Node2D" unique_id=1911877330]
+
+[node name="Vida" type="Area2D" parent="." unique_id=252933063]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ppm31")
+
+[node name="Sprite2D" type="Sprite2D" parent="Vida" unique_id=1687724714]
+scale = Vector2(0.089965425, 0.0899654)
+texture = ExtResource("2_1b27c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vida" unique_id=2013017618]
+shape = SubResource("RectangleShape2D_hw88q")
+
+[connection signal="body_entered" from="Vida" to="Vida" method="coletar_biscoito"]

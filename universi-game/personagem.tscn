@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dy020rbhypug1" path="res://script_personagem.gd" id="1_vvf27"]
 [ext_resource type="Texture2D" uid="uid://dexrs65lm0d14" path="res://Imagens/personagem/idle_1-removebg-preview.png" id="2_d7snr"]
+[ext_resource type="Resource" uid="uid://cblb8mqf3bxq" path="res://tabela_drops.tres" id="2_krywo"]
 [ext_resource type="Texture2D" uid="uid://cjln6rnoyjytt" path="res://Imagens/personagem/attack_1-removebg-preview.png" id="3_37m8p"]
 [ext_resource type="Texture2D" uid="uid://dy0euv2r50f2t" path="res://Imagens/personagem/attack_2-removebg-preview.png" id="4_qqs8o"]
 [ext_resource type="Texture2D" uid="uid://caqc8eekgwk5r" path="res://Imagens/personagem/attack_3-removebg-preview.png" id="5_4rabl"]
@@ -33,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://6ffjcmbmf1e1" path="res://Imagens/personagem/walk_4-removebg-preview.png" id="25_7uchw"]
 [ext_resource type="AudioStream" uid="uid://da3flu7m8e1dy" path="res://Sons/attack.mp3" id="31_73hqi"]
 [ext_resource type="AudioStream" uid="uid://cxdyaae6snhwh" path="res://Sons/Ganhando_vida.wav" id="33_6q1ok"]
+[ext_resource type="Texture2D" uid="uid://cwhkn6q3wvnm7" path="res://Imagens/images-removebg-preview.png" id="34_asatx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3elh"]
 size = Vector2(43.5, 77)
@@ -342,6 +344,7 @@ position = Vector2(557, 392)
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=512876693 groups=["jogador"]]
 collision_layer = 2
 script = ExtResource("1_vvf27")
+loot_table = ExtResource("2_krywo")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2145075188]
 position = Vector2(-0.5000034, 6.7466564)
@@ -372,7 +375,6 @@ disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1927206746]
 position = Vector2(-1, 4)
-zoom = Vector2(1.3, 1.3)
 limit_left = -5
 limit_top = -478
 limit_right = 1376
@@ -381,5 +383,14 @@ limit_smoothed = true
 
 [node name="AudioStreamPlayer_ganha_vida" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=178120875]
 stream = ExtResource("33_6q1ok")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D" unique_id=710642898]
+visible = false
+modulate = Color(1, 1, 1, 0.34901962)
+self_modulate = Color(1, 1, 0.36862746, 1)
+show_behind_parent = true
+position = Vector2(1.0000381, 3.5000124)
+scale = Vector2(0.32444426, 0.48444438)
+texture = ExtResource("34_asatx")
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="eliminar_inimigo"]

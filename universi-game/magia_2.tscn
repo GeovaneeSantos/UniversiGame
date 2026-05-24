@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bohou51qljv8a"]
+
+[ext_resource type="Script" uid="uid://0270ab8unxuw" path="res://script_magia.gd" id="1_5itv7"]
+[ext_resource type="Texture2D" uid="uid://dkahoaojetrac" path="res://Imagens/personagem/magia_2.png" id="3_1ufls"]
+[ext_resource type="Texture2D" uid="uid://df3wtxfpq7aex" path="res://Imagens/personagem/magia_3.png" id="4_4glw4"]
+[ext_resource type="Texture2D" uid="uid://do8x5q73qn142" path="res://Imagens/personagem/magia_4.png" id="5_xntx1"]
+[ext_resource type="Texture2D" uid="uid://cqretpq1lemry" path="res://Imagens/personagem/magia_5.png" id="6_5itv7"]
+
+[sub_resource type="Animation" id="Animation_bbgnl"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_pff7h"]
+resource_name = "magic"
+length = 2.0
+loop_mode = 1
+step = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.125),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_1ufls"), ExtResource("4_4glw4"), ExtResource("5_xntx1"), ExtResource("4_4glw4"), ExtResource("5_xntx1"), ExtResource("6_5itv7")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mhvpv"]
+_data = {
+&"RESET": SubResource("Animation_bbgnl"),
+&"magic": SubResource("Animation_pff7h")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw188"]
+size = Vector2(52, 24)
+
+[node name="Magia" type="Node2D" unique_id=1230887760]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=792900748]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_5itv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=482155663]
+scale = Vector2(0.11016947, 0.11016949)
+texture = ExtResource("3_1ufls")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" unique_id=383496600]
+libraries/ = SubResource("AnimationLibrary_mhvpv")
+autoplay = &"magic"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1610144608]
+shape = SubResource("RectangleShape2D_qw188")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="eliminar_inimigo"]

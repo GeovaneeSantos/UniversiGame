@@ -4,9 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cwj747hr6otnb" path="res://Imagens/head-removebg-preview.png" id="2_640wx"]
 [ext_resource type="Texture2D" uid="uid://bf68gbihkoe0u" path="res://Imagens/personagem/enemy.png" id="2_a2258"]
 [ext_resource type="Texture2D" uid="uid://dgxoqgsghmpl7" path="res://Imagens/vida.png" id="3_a2258"]
+[ext_resource type="Texture2D" uid="uid://dd0gv6y4tjiwy" path="res://Imagens/biscoito.png" id="5_1xsix"]
+[ext_resource type="Texture2D" uid="uid://cim3tgyg06vtq" path="res://Imagens/personagem/idle-removebg-preview.png" id="6_rftc2"]
 
 [sub_resource type="SystemFont" id="SystemFont_640wx"]
 resource_local_to_scene = true
+subpixel_positioning = 0
 
 [node name="HUD" type="Node2D" unique_id=1138574463]
 position = Vector2(-2, 0)
@@ -37,10 +40,60 @@ position = Vector2(209.99998, 50.000008)
 scale = Vector2(0.14862204, 0.14862204)
 texture = ExtResource("3_a2258")
 
-[node name="Label" type="Label" parent="." unique_id=1294287679]
-offset_left = 1082.0
+[node name="Vida4" type="Sprite2D" parent="." unique_id=670759802]
+position = Vector2(255.99994, 50.000008)
+scale = Vector2(0.14862204, 0.14862204)
+texture = ExtResource("3_a2258")
+
+[node name="Dica" type="Label" parent="." unique_id=1294287679]
+visible = false
+offset_left = 40.0
+offset_top = 113.0
+offset_right = 80.0
+offset_bottom = 157.0
+theme_override_fonts/font = SubResource("SystemFont_640wx")
+theme_override_font_sizes/font_size = 14
+text = "Pressione ATTACK para chamar seu parceiro"
+
+[node name="Biscoito" type="Sprite2D" parent="." unique_id=1951045119]
+position = Vector2(50, 96.00002)
+scale = Vector2(0.089965396, 0.08996539)
+texture = ExtResource("5_1xsix")
+
+[node name="Biscoito2" type="Sprite2D" parent="." unique_id=880265678]
+position = Vector2(86.00001, 96.00002)
+scale = Vector2(0.089965396, 0.08996539)
+texture = ExtResource("5_1xsix")
+
+[node name="Biscoito3" type="Sprite2D" parent="." unique_id=923453266]
+position = Vector2(122.00001, 96.00002)
+scale = Vector2(0.089965396, 0.08996539)
+texture = ExtResource("5_1xsix")
+
+[node name="Biscoito4" type="Sprite2D" parent="." unique_id=898986747]
+position = Vector2(160.99997, 96.00002)
+scale = Vector2(0.089965396, 0.08996539)
+texture = ExtResource("5_1xsix")
+
+[node name="Biscoito5" type="Sprite2D" parent="." unique_id=832990820]
+position = Vector2(198.99997, 96.00002)
+scale = Vector2(0.089965396, 0.08996539)
+texture = ExtResource("5_1xsix")
+
+[node name="dog" type="Sprite2D" parent="." unique_id=1682981582]
+position = Vector2(235, 90)
+scale = Vector2(0.09599992, 0.09599992)
+texture = ExtResource("6_rftc2")
+
+[node name="Vida5" type="Sprite2D" parent="." unique_id=301532831]
+position = Vector2(300.99994, 50.000008)
+scale = Vector2(0.14862204, 0.14862204)
+texture = ExtResource("3_a2258")
+
+[node name="Label" type="Label" parent="." unique_id=604903140]
+offset_left = 1079.0
 offset_top = 31.0
-offset_right = 1122.0
-offset_bottom = 54.0
+offset_right = 1119.0
+offset_bottom = 75.0
 theme_override_fonts/font = SubResource("SystemFont_640wx")
 theme_override_font_sizes/font_size = 31

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cc4q4lmhhil1u" path="res://script_livro.gd" id="1_kvt05"]
 [ext_resource type="Texture2D" uid="uid://b1frgqnfvbves" path="res://Imagens/personagem/book-removebg-preview.png" id="1_vb8as"]
+[ext_resource type="Resource" uid="uid://cblb8mqf3bxq" path="res://tabela_drops.tres" id="2_ksk56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvt05"]
 size = Vector2(31, 24)
@@ -12,6 +13,7 @@ size = Vector2(31, 24)
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_kvt05")
+loot_table = ExtResource("2_ksk56")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=284545335]
 scale = Vector2(0.12663752, 0.12663755)

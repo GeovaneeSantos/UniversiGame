@@ -508,7 +508,4 @@ texture = ExtResource("7_ukumj")
 [node name="Vida2" parent="." unique_id=1911877330 instance=ExtResource("8_eooh8")]
 position = Vector2(1099, 576)
 
-[node name="Vida" parent="." unique_id=987569870 instance=ExtResource("8_eooh8")]
-position = Vector2(761, 209)
-
 [connection signal="body_entered" from="Area2D2" to="." method="sair_fase"]

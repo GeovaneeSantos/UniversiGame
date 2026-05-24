@@ -15,7 +15,11 @@ func _process(delta: float) -> void:
 
 func eliminar_inimigo(body: Node2D) -> void:
 	if (body.name=="CharacterBody2D"):
-		ScriptGlobal.vidas -= 1
+		if(not ScriptGlobal.protec):
+			ScriptGlobal.vidas -= 1
+		queue_free()
+		
+		
 	
 	
 	

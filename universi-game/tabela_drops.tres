@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="LootTable" format=3 uid="uid://cblb8mqf3bxq"]
+
+[ext_resource type="Script" uid="uid://bhadjfxgh7y4i" path="res://LootItem.gd" id="1_mr02f"]
+[ext_resource type="PackedScene" uid="uid://d0b5312jtxj4j" path="res://cena_vida.tscn" id="2_2gyjq"]
+[ext_resource type="Script" uid="uid://cwgj2osj7x6n" path="res://LootTable.gd" id="2_sbagc"]
+[ext_resource type="PackedScene" uid="uid://dnjym4hsvr73c" path="res://cena_biscoito.tscn" id="3_2gyjq"]
+
+[sub_resource type="Resource" id="Resource_2gyjq"]
+script = ExtResource("1_mr02f")
+item_scene = ExtResource("2_2gyjq")
+drop_chance = 40.0
+metadata/_custom_type_script = "uid://bhadjfxgh7y4i"
+
+[sub_resource type="Resource" id="Resource_vipgr"]
+script = ExtResource("1_mr02f")
+item_name = "Biscoito"
+item_scene = ExtResource("3_2gyjq")
+drop_chance = 30.0
+metadata/_custom_type_script = "uid://bhadjfxgh7y4i"
+
+[resource]
+script = ExtResource("2_sbagc")
+items = Array[ExtResource("1_mr02f")]([SubResource("Resource_2gyjq"), SubResource("Resource_vipgr")])
+metadata/_custom_type_script = "uid://cwgj2osj7x6n"
