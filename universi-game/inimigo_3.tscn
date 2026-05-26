@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dj303wq83i73r" path="res://Imagens/personagem/4 - ChangeCell.png" id="6_68mih"]
 [ext_resource type="Texture2D" uid="uid://qi73nblwgdr" path="res://Imagens/personagem/5 - ChangeCell.png" id="7_nj74w"]
 [ext_resource type="Texture2D" uid="uid://7x34tk5wkf56" path="res://Imagens/personagem/6 - ChangeCell.png" id="8_uecb7"]
-[ext_resource type="Texture2D" uid="uid://bd3feeyi1a0b" path="res://Imagens/personagem/magia_1.png" id="9_6lmkn"]
+[ext_resource type="AudioStream" uid="uid://dxfumkna8p3mu" path="res://Sons/magic.mp3" id="9_6lmkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enrbn"]
 size = Vector2(96, 76)
@@ -39,18 +39,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [2]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Magia1:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_3af6e"]
 resource_name = "idle"
@@ -80,18 +68,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Magia1:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_nglqo"]
@@ -135,18 +111,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [1]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Magia1:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.75),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f2mw5"]
 _data = {
@@ -188,7 +152,6 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_l0fh3")
 debug_color = Color(0.94279826, 0.15883285, 0.45911187, 0.41960785)
 
-[node name="Magia1" type="Sprite2D" parent="." unique_id=1456450631]
-position = Vector2(55.448486, 6.9999995)
-scale = Vector2(0.23369472, 0.095238104)
-texture = ExtResource("9_6lmkn")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Inimigo" unique_id=986700230]
+stream = ExtResource("9_6lmkn")
+volume_db = -35.429

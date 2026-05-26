@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://rf3i1s6d4jtt" path="res://script_inicio.gd" id="1_hnhcb"]
 [ext_resource type="Texture2D" uid="uid://bjqc8rximpx3c" path="res://Imagens/inicio.png" id="2_cd34d"]
+[ext_resource type="AudioStream" uid="uid://det6tfcbq6ojd" path="res://Sons/fase_par.mp3" id="3_cd34d"]
 
 [node name="inicio" type="Node2D" unique_id=2076219421]
 script = ExtResource("1_hnhcb")
@@ -16,5 +17,10 @@ offset_left = 404.0
 offset_top = 567.0
 offset_right = 724.0
 offset_bottom = 626.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=250959807]
+stream = ExtResource("3_cd34d")
+volume_db = -16.142
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="iniciar"]

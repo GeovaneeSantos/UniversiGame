@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cs4pw1i0eqwv" path="res://inimigo2.tscn" id="7_uywar"]
 [ext_resource type="Texture2D" uid="uid://bnun156whxp4e" path="res://Imagens/fundo.png" id="8_74v1j"]
 [ext_resource type="PackedScene" uid="uid://v43r5sxdljut" path="res://inimigo_3.tscn" id="10_2hk2v"]
+[ext_resource type="AudioStream" uid="uid://det6tfcbq6ojd" path="res://Sons/fase_par.mp3" id="10_j4ybs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uywar"]
 size = Vector2(121, 29)
@@ -209,5 +210,28 @@ texture = ExtResource("8_74v1j")
 
 [node name="Inimigo6" parent="." unique_id=244919612 instance=ExtResource("10_2hk2v")]
 position = Vector2(823, 455)
+
+[node name="PontosDeSpawn" type="Node2D" parent="." unique_id=328864543]
+
+[node name="Marker2D" type="Marker2D" parent="PontosDeSpawn" unique_id=594811578]
+position = Vector2(708, -78)
+
+[node name="Marker2D2" type="Marker2D" parent="PontosDeSpawn" unique_id=2039305326]
+position = Vector2(1066, 195)
+
+[node name="Marker2D3" type="Marker2D" parent="PontosDeSpawn" unique_id=945565847]
+position = Vector2(60, 169)
+
+[node name="Marker2D4" type="Marker2D" parent="PontosDeSpawn" unique_id=209443549]
+position = Vector2(379, 376)
+
+[node name="Marker2D5" type="Marker2D" parent="PontosDeSpawn" unique_id=924149934]
+position = Vector2(843, 65)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1719356356]
+stream = ExtResource("10_j4ybs")
+volume_db = -16.142
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Area2D2" to="." method="sair_fase"]

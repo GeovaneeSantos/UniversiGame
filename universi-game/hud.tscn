@@ -6,12 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://dgxoqgsghmpl7" path="res://Imagens/vida.png" id="3_a2258"]
 [ext_resource type="Texture2D" uid="uid://dd0gv6y4tjiwy" path="res://Imagens/biscoito.png" id="5_1xsix"]
 [ext_resource type="Texture2D" uid="uid://cim3tgyg06vtq" path="res://Imagens/personagem/idle-removebg-preview.png" id="6_rftc2"]
+[ext_resource type="AudioStream" uid="uid://det6tfcbq6ojd" path="res://Sons/fase_par.mp3" id="7_rftc2"]
 
 [sub_resource type="SystemFont" id="SystemFont_640wx"]
 resource_local_to_scene = true
 subpixel_positioning = 0
 
 [node name="HUD" type="Node2D" unique_id=1138574463]
+process_mode = 3
+show_behind_parent = true
 position = Vector2(-2, 0)
 script = ExtResource("1_8sq4i")
 
@@ -53,7 +56,7 @@ offset_right = 80.0
 offset_bottom = 157.0
 theme_override_fonts/font = SubResource("SystemFont_640wx")
 theme_override_font_sizes/font_size = 14
-text = "Pressione ATTACK para chamar seu parceiro"
+text = "Pressione ATTACK + H para chamar seu parceiro"
 
 [node name="Biscoito" type="Sprite2D" parent="." unique_id=1951045119]
 position = Vector2(50, 96.00002)
@@ -97,3 +100,31 @@ offset_right = 1119.0
 offset_bottom = 75.0
 theme_override_fonts/font = SubResource("SystemFont_640wx")
 theme_override_font_sizes/font_size = 31
+
+[node name="PosicaoDica" type="Marker2D" parent="." unique_id=1565791386]
+position = Vector2(367, 48)
+
+[node name="PainelPause" type="ColorRect" parent="." unique_id=1224694019]
+process_mode = 3
+visible = false
+offset_left = 452.0
+offset_top = 276.0
+offset_right = 743.0
+offset_bottom = 416.0
+color = Color(1, 1, 1, 0.38431373)
+
+[node name="Label" type="Label" parent="PainelPause" unique_id=1489184981]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 46.0
+offset_right = 213.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 22
+text = "PAUSADO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PainelPause/Label" unique_id=1115563770]
+stream = ExtResource("7_rftc2")
+volume_db = -16.142
+autoplay = true

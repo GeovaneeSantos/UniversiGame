@@ -37,4 +37,5 @@ func spell():
 		objeto_spell.get_node("Area2D").direcao = 1
 	
 	add_sibling(objeto_spell)
+	$AudioStreamPlayer2D.play()
 	objeto_spell.global_position = $Marker2D.global_position

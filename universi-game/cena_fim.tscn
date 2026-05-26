@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://udndn3dsr21v"]
+
+[ext_resource type="Texture2D" uid="uid://nuevh62spy6g" path="res://Imagens/victory.png" id="1_kgda3"]
+[ext_resource type="Script" uid="uid://c5ci80j58cfnq" path="res://cena_fim.gd" id="1_luyrx"]
+
+[node name="Node2D" type="Node2D" unique_id=252690444]
+script = ExtResource("1_luyrx")
+
+[node name="Victory" type="Sprite2D" parent="." unique_id=703068668]
+position = Vector2(576.75, 330)
+scale = Vector2(0.974477, 0.75223213)
+texture = ExtResource("1_kgda3")
+
+[node name="Button" type="Button" parent="." unique_id=433782735]
+offset_left = 408.0
+offset_top = 582.0
+offset_right = 734.0
+offset_bottom = 650.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://bvr0kv8kfp31j"]
+
+[ext_resource type="Script" uid="uid://3nd2j134ggtv" path="res://script_boss.gd" id="1_ry61v"]
+[ext_resource type="Texture2D" uid="uid://dcckaoh4lv4qg" path="res://Imagens/personagem/enemy_attack_jump_1-removebg-preview.png" id="2_kles1"]
+[ext_resource type="Texture2D" uid="uid://bni1py3pxfcjg" path="res://Imagens/personagem/enemy_attack_jump_2-removebg-preview.png" id="3_etj48"]
+[ext_resource type="Texture2D" uid="uid://d1tf3224gvj7n" path="res://Imagens/personagem/enemy_attack_jump_3-removebg-preview.png" id="4_h3lj5"]
+[ext_resource type="Texture2D" uid="uid://fohgr33yhmx" path="res://Imagens/personagem/enemy_attack_jump_4-removebg-preview.png" id="5_1s1j2"]
+[ext_resource type="Texture2D" uid="uid://byams5un770wp" path="res://Imagens/personagem/enemy_attack_jump_5-removebg-preview.png" id="6_km2bi"]
+[ext_resource type="Texture2D" uid="uid://bq5doo7760ahi" path="res://Imagens/personagem/enemy_attack_jump_6-removebg-preview.png" id="7_u0duv"]
+[ext_resource type="Texture2D" uid="uid://ddoamfuv1ou61" path="res://Imagens/personagem/enemy_attack_jump_7-removebg-preview.png" id="8_lc4na"]
+[ext_resource type="Texture2D" uid="uid://dkwwmqchjqxtu" path="res://Imagens/personagem/enemy_attack_jump_8-removebg-preview.png" id="9_8arul"]
+[ext_resource type="Texture2D" uid="uid://dn1x48v5y4nhw" path="res://Imagens/personagem/boss_explosion_1-removebg-preview.png" id="10_7ke2s"]
+[ext_resource type="Texture2D" uid="uid://by7vustb07caq" path="res://Imagens/personagem/boss_explosion_2-removebg-preview.png" id="11_ppmbc"]
+[ext_resource type="Texture2D" uid="uid://bufhwvri8msgm" path="res://Imagens/personagem/boss_explosion_3-removebg-preview.png" id="12_kw08n"]
+[ext_resource type="Texture2D" uid="uid://hv6gp142a4ly" path="res://Imagens/personagem/boss_explosion_4-removebg-preview.png" id="13_rdfxm"]
+[ext_resource type="Texture2D" uid="uid://cq160e4dyfc5d" path="res://Imagens/personagem/boss_explosion_5-removebg-preview.png" id="14_cm1kr"]
+[ext_resource type="Texture2D" uid="uid://c6mwppuelukp3" path="res://Imagens/personagem/boss_explosion_6-removebg-preview.png" id="15_akhi5"]
+[ext_resource type="Texture2D" uid="uid://cxf41p7u6g4h8" path="res://Imagens/personagem/boss_explosion_7-removebg-preview.png" id="16_vwlhh"]
+[ext_resource type="Texture2D" uid="uid://c1c0h8uen8nxf" path="res://Imagens/personagem/boss_sword_1-removebg-preview.png" id="17_xvkcc"]
+[ext_resource type="Texture2D" uid="uid://bw2knfn2y8hgj" path="res://Imagens/personagem/boss_sword_2-removebg-preview.png" id="18_oehbi"]
+[ext_resource type="Texture2D" uid="uid://ccvu7wrdpfwyd" path="res://Imagens/personagem/boss_sword_3-removebg-preview.png" id="19_b3701"]
+[ext_resource type="Texture2D" uid="uid://coe8cyyys0ujs" path="res://Imagens/personagem/boss_sword_4-removebg-preview.png" id="20_7b5wb"]
+[ext_resource type="Texture2D" uid="uid://qwt7e2v53at5" path="res://Imagens/personagem/boss_sword_5-removebg-preview.png" id="21_eeb72"]
+[ext_resource type="Texture2D" uid="uid://ci51ffb70s1tx" path="res://Imagens/personagem/boss_sword_6-removebg-preview.png" id="22_fdn2a"]
+[ext_resource type="Texture2D" uid="uid://ybtg1vtbq4j7" path="res://Imagens/personagem/boss_sword_7-removebg-preview.png" id="23_vvoe5"]
+[ext_resource type="Texture2D" uid="uid://d3jbaajkwxj57" path="res://Imagens/personagem/boss_sword_8-removebg-preview.png" id="24_x1mfc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enrbn"]
+size = Vector2(232, 228)
+
+[sub_resource type="Animation" id="Animation_okuc3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_kles1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qkvyg"]
+resource_name = "attack"
+length = 5.0
+step = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.625, 1.75, 1.875, 2, 2.125, 2.375, 2.625, 2.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_kles1"), ExtResource("3_etj48"), ExtResource("4_h3lj5"), ExtResource("5_1s1j2"), ExtResource("6_km2bi"), ExtResource("7_u0duv"), ExtResource("8_lc4na"), ExtResource("9_8arul")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 2.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_7ke2s"]
+resource_name = "idle"
+length = 2.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_7ke2s"), ExtResource("17_xvkcc"), ExtResource("10_7ke2s"), ExtResource("17_xvkcc"), ExtResource("10_7ke2s"), ExtResource("17_xvkcc"), ExtResource("10_7ke2s"), ExtResource("17_xvkcc"), ExtResource("10_7ke2s"), ExtResource("17_xvkcc"), ExtResource("10_7ke2s")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vomys"]
+resource_name = "jump"
+length = 1.5
+step = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 1, 1.125, 1.25, 1.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_7ke2s"), ExtResource("11_ppmbc"), ExtResource("12_kw08n"), ExtResource("13_rdfxm"), ExtResource("14_cm1kr"), ExtResource("15_akhi5"), ExtResource("16_vwlhh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_cas4q"]
+resource_name = "sword"
+step = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("17_xvkcc"), ExtResource("18_oehbi"), ExtResource("19_b3701"), ExtResource("20_7b5wb"), ExtResource("21_eeb72"), ExtResource("22_fdn2a"), ExtResource("23_vvoe5"), ExtResource("24_x1mfc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.375, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f2mw5"]
+_data = {
+&"RESET": SubResource("Animation_okuc3"),
+&"attack": SubResource("Animation_qkvyg"),
+&"idle": SubResource("Animation_7ke2s"),
+&"jump": SubResource("Animation_vomys"),
+&"sword": SubResource("Animation_cas4q")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0fh3"]
+size = Vector2(300, 234)
+
+[node name="Boss" type="Node2D" unique_id=2087576167]
+
+[node name="Boss" type="CharacterBody2D" parent="." unique_id=1935804188 groups=["boss"]]
+light_mask = 4
+collision_layer = 4
+script = ExtResource("1_ry61v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boss" unique_id=683321299]
+scale = Vector2(1.8367344, 1.8367347)
+texture = ExtResource("2_kles1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss" unique_id=1324156660]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_enrbn")
+one_way_collision = true
+one_way_collision_margin = 15.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boss" unique_id=1750978858]
+libraries/ = SubResource("AnimationLibrary_f2mw5")
+
+[node name="Marker2D" type="Marker2D" parent="Boss" unique_id=1060693762]
+position = Vector2(35, -7)
+
+[node name="Area2D" type="Area2D" parent="Boss" unique_id=1264005623]
+visibility_layer = 4
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Area2D" unique_id=2011246187]
+z_index = 1
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_l0fh3")
+disabled = true
+debug_color = Color(0.6505108, 0.49391675, 0.45186257, 0.41960785)
+
+[connection signal="animation_finished" from="Boss/AnimationPlayer" to="Boss" method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Boss/Area2D" to="Boss" method="attack"]
